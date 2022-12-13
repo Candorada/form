@@ -1,0 +1,191 @@
+<html>
+<style>
+    .hyperLink{
+        text-decoration-line: underline;
+        color: blue;
+    }
+
+    .question {
+        box-shadow:0 0 3px gray;
+        width: 70%;
+        background-color:white; 
+        border-radius: 10px;
+        border:1px solid white;
+        margin: auto;
+        margin-bottom:10;
+        padding-bottom: 10;
+    }
+    .question > h1{
+        box-shadow:0 0 10px gray;
+        padding-left:20px;
+        color:black;
+        font-size: 20;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    .question input{
+        margin-left:20px;
+        margin-bottom:5px
+    }
+    .question > input.text{
+        transition: background-color 300ms;
+        margin-bottom: 10px;
+        border:0;
+        outline:0;
+        box-shadow: 0 1px gray;
+        width: 40%;
+        background-color: rgb(236, 236, 236);
+    }
+    .question > input.text:hover{
+        transition: background-color 300ms;
+        margin-bottom: 10px;
+        border:0;
+        outline:0;
+        box-shadow: 0 1px gray;
+        width: 40%;
+        background-color: rgb(210, 210, 210);
+    }
+    .question > select{
+        outline:none;
+        margin-bottom: 10px;
+        transition: background-color 300ms;
+        border:0;
+        box-shadow:0 0 5px gray;
+        margin-left:20px;
+    }
+    .question > select[multiple]:hover{
+    background-color: white;
+    }
+    .question > select:hover{
+        outline:none;
+        margin-bottom: 10px;
+        transition: background-color 300ms;
+        background-color: rgb(228, 228, 228);
+        border:0;
+        box-shadow:0 0 5px gray;
+        margin-left:20px;
+    }
+    option{
+        transition: background-color 300ms;
+        box-shadow: 0 1px gray;
+    }
+    .comment{
+        color:gray;
+        margin-left:10;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: small;
+    }
+    .question > textarea{
+        margin-left:20px;
+        resize:none;
+        background-size:auto;
+        outline:0;
+        border:0;
+        box-shadow: 0 0 5px gray;
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: rgb(236, 236, 236);
+    }
+    .question > h2{
+        font-family:sans-serif; font-size:larger; margin-left:20px;
+    }
+
+</style>
+    <script> //this is where the script starts
+        var tosAccepted = ""; // true or false
+function tosOpen(){ // opens Terms of service page
+    var newwin = window.open("","","width=500, height =500")
+    newwin.document.write([`
+    <!--Html Here of new page-->
+    <!--bellow this is the terms of service HTML-->
+    <style>
+        </style>
+        <body style = "background-color:rgb(236, 236, 236);"><h1>Website Terms and Conditions of Use</h1><h2>1. Terms</h2><p>By accessing this Website, accessible from form.Url, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</p><h2>2. Copyright</h2><p>any information entered into the form will be owned by form.url and cannot be requested to be removed at later dates</p><h2>3. privacy</h2><p>Your information will not be private and will be used for data collection and analisis. your name will also be connected to the data and if any illigal activity is noticed it will be reported.</p></body>
+    `])
+}
+function sub(){ //FUNCTION will be used to submit the Form
+    for(i = 0;i < document.form.TOS.length; i ++){
+        if(document.form.TOS[i].checked == true){
+            tosAccepted = document.form.TOS[i].value
+        }
+    }
+    if(tosAccepted == "true"){
+alert("yes")
+    }
+}
+    </script>
+    <button onclick = "document.body.parentElement.innerHTML = document.body.parentElement.innerHTML" style="position:absolute ;border-radius:3px;box-shadow:0 0 3px red; background-color: rgb(200, 200, 200); border:0;">Reset Form</button> <h class = comment style="position:absolute;transform: translate(-15px,20px);"> this will reset your choices</h>
+    <body style="background-color:rgb(240, 240, 240);">
+        <form action="" name = "form" style="padding-block: 100;"> <!--form-->
+            <div class = "question" name = "title" style="border-color: gray; border-width: 2px;">
+                <h1 style="text-align: center; padding-left:0px;">School Form</h1>
+                <h3 class = comment style="margin:0 10px 0;">Form By Gustav Conrad. What are your Thoughts about school</h3> <!--form description-->
+            </div>    
+            <div class = "question">
+                <h1>Example Header</h1>                                                     <!--title example-->
+        <input type="radio" name="TestName" value="TestValue">Example Radio<br>             <!--Radio Example-->
+        <input type="checkbox" name="">TextBox Example<br>                                  <!--checkbox Example-->
+        <input type="text" class = "text" name="" placeholder="Random Text Input"><br>      <!--text box Example-->
+<select name="" multiple>                                                                   <!--Multi Select Box Example-->
+<option value="">Choose</option>
+<option value="">other choice</option>
+</select><br>                                                                               <!--End Of Select Example-->
+<h class = comment>hold ⌘ on mac or Ctrl on Windows to select multiple options</h><br>      <!--Comment Example-->
+<textarea name="" id="" cols="30" rows="10" placeholder="Test Text Area"></textarea>        <!--TextArea Example-->
+            </div>       
+
+            <div class = question>
+                <h1>Who are you</h1> <!--title example-->
+                <input type="text" class = "text" name="nFirst" placeholder="First Name"><br> 
+                <input type="text" class = "text" name="nLast" placeholder="Last Name"><br> 
+                <select name="teachers">
+                    <option value="nil">-Grade-</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select><br>
+                <select name="teachers" class = multiple>
+                    <option value="nil">-Teacher Name-</option>
+                    <option value="Vandalist">Mr Vandalist</option>
+                    <option value="Coading">Mrs Coading</option>
+                    <option value="GAAH Shoot">Mr GAAH Shoot</option>
+                    <option value="Tabletop">Mrs Tabletop Games</option>
+                </select><br>
+
+            </div>
+<div class = question>
+    <h1>What are your Thought about your teacher</h1>
+    <h2>Q. On a scale from 1-5 do u agree with your teachers methods of teaching</h2>
+    <br>
+    <table>
+        <tr>
+            <td> </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5</td><td> </td>
+        </tr>
+        <tr>
+            <td>Disagree</td><td><input type="radio" name="like" value="1"></td><td><input type="radio" name="like" value="2"></td><td><input type="radio" name="like" value="3"></td><td><input type="radio" name="like" value="4"></td><td><input type="radio" name="like" value="5" style="margin-right:10px;"></td><td>Agree</td>
+        </tr>
+    </table>
+    <h2>Q. What do you like and diskile about your teacher</h2>
+    <textarea name="" id="" cols="30" rows="10" placeholder="write between 2 and 10 sentances"></textarea>
+</div>
+<div class = question>
+    <h1>What are your Thought about your peers</h1>
+    <h2>Q. Best friends & enemys</h2>
+    <input type="text" name="" class = text placeholder="Who is your Best Friend"><br>
+    <input type="text" name="" class = text placeholder="Who do you hate the most"><br>
+    <h2>Q. Tell me the story of how u met both of them</h2>
+    <textarea name="" id="" cols="30" rows="10" placeholder="write between 2 and 10 sentances"></textarea>
+</div>
+            <fieldset>
+                <legend>Do You Agree To The <a class = hyperlink onclick='tosOpen()'>Terms Of Service</a>?</legend>
+                <input type="radio" name="TOS" value="true">Yes 
+                <input type="radio" name="TOS" value="false">No 
+                <h class = comment>It is required to agree to the Terms of service</h>
+            </fieldset>
+                </form>      
+                <input type="button" value="Submit Form" onclick = "sub()"style="border:0;border-radius:10px; box-shadow:0 0 3px gray; background-color: white; width:200px; height: 20px; margin-left:50%; transform:translate(-50%,0)">
+    </body>
+</html>
